@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        .main-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        .text-box {
+            position: absolute;
+            top: 30px;
+            left: 230px; 
+            font-size: 60px;
+        }
+
+        .text-box1 {
+            position: absolute;
+            top: 30px;
+            left: 400px; 
+            font-size: 60px;
+        }
+
+        .text-box2 {
+            position: absolute;
+            top: 30px;
+            left: 620px; 
+            font-size: 60px;
+        }
+
+        .text-box3 {
+            position: absolute;
+            top: 30px;
+            left: 820px; 
+            font-size: 60px;
+        }
+
+        .text-box4 {
+            position: absolute;
+            top: 30px;
+            left: 1020px; 
+            font-size: 60px;
+        }
+
+        .text-box5 {
+            position: absolute;
+            top: 30px;
+            left: 1220px; 
+            font-size: 60px;
+        }
+
+        .text-box6 {
+            position: absolute;
+            top: 100px;
+            left: 190px; 
+            font-size: 16px;
+        }
+
+        .text-box7 {
+            position: absolute;
+            top: 100px;
+            left: 370px; 
+            font-size: 16px;
+        }
+
+        .text-box8 {
+            position: absolute;
+            top: 100px;
+            left: 550px; 
+            font-size: 16px;
+        }
+
+        .text-box9 {
+            position: absolute;
+            top: 100px;
+            left: 790px; 
+            font-size: 16px;
+        }
+
+        .text-box10 {
+            position: absolute;
+            top: 100px;
+            left: 990px; 
+            font-size: 16px;
+        }
+
+        .text-box11 {
+            position: absolute;
+            top: 100px;
+            left: 1250px; 
+            font-size: 16px;
+        }
+
+        .image-container {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        .image-container img {
+            width: 150px; /* Adjust size */
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .pie-container {
+            margin-top: 160px;
+            flex: 2;
+            text-align: center;
+        }
+        .pie-container img {
+            width: 420px;
+            height: 300px;
+        }
+
+        .table-container {
+            flex: 3;
+            margin-top: 160px;
+            max-height: 320px;
+            overflow-y: auto;
+            overflow-x: auto;
+        }
+
+        .donut-container {
+            margin-top: 160px;
+            flex: 2;
+            text-align: center;
+        }
+        .donut-container img {
+            width: 350px;
+            height: 300px;
+        }
+
+        .histogram-container {
+            text-align: center;
+            margin-top: 25px;
+            position: absolute;
+            left: 100px;
+        }
+        .histogram-container img {
+            width: 450px;
+            height: 350px;
+        }
+
+        .faculty-chart-container {
+            position: absolute;
+            right: 50px;
+            margin-top: 25px;
+            text-align: center;
+        }
+        .faculty-chart-container img {
+            width: 800px;
+            height: 350px;
+        }
+    </style>
+</head>
+<body class="container mt-4">
+
+    <div class="image-container">
+        <img src="{{ url_for('static', filename='images/my_photo.jpg') }}" alt="My Image">
+    </div>
+    <div class="text-box">{{ c_branchs }}</div>
+    <div class="text-box1">{{ c_faculties }}</div>
+    <div class="text-box2">{{ x_faculties }}</div>
+    <div class="text-box3">{{ c_jobRole }}</div>
+    <div class="text-box4">{{ c_sub }}</div>
+    <div class="text-box5">{{ max_income }}</div>
+    <div class="text-box6">Count of branches</div>
+    <div class="text-box7">Count of Faculties</div>
+    <div class="text-box8">Count of Ex - Faculties </div>
+    <div class="text-box9">Count of job role </div>
+    <div class="text-box10">Count of Subjects </div>
+    <div class="text-box11">Max of Income </div>
+
+    <div class="main-container">
+        <!-- Pie Chart -->
+        <div class="pie-container">
+            <img src="data:image/png;base64,{{ pie_chart }}" alt="Pie Chart">
+        </div>
+
+        <div class="table-container">
+            <h4>Faculty Role Distribution</h4>
+            <table class="table table-bordered table-striped text-center">
+                <thead class="table-dark">
+                    <tr>
+                        <th rowspan="2">Faculties</th>
+                        <th colspan="2">Male</th>
+                        <th colspan="2">Female</th>
+                    </tr>
+                    <tr>
+                        <th>First Head O.D</th>
+                        <th>First Job Role</th>
+                        <th>First Head O.D</th>
+                        <th>First Job Role</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for faculty in faculties_data %}
+                    <tr>
+                        <td>{{ faculty.name }}</td>
+                        <td>{{ faculty.male_head_od }}</td>
+                        <td>{{ faculty.male_first_job }}</td>
+                        <td>{{ faculty.female_head_od }}</td>
+                        <td>{{ faculty.female_first_job }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <div class="donut-container">
+            <h4>Faculties Age</h4>
+            <img src="data:image/png;base64,{{ donut_chart }}" alt="Donut Chart">
+        </div>
+    </div>
+
+    <div class="histogram-container">
+        <h4>Income Distribution</h4>
+        <img src="data:image/png;base64,{{ histogram }}" alt="Histogram">
+    </div>
+
+    <div class="faculty-chart-container">
+        <h4>Count of Head O.D. by Subject and Faculties</h4>
+        <img src="data:image/png;base64,{{ faculty_chart }}" alt="Faculty Subject Chart">
+    </div>
+
+
+
+</body>
+</html>
