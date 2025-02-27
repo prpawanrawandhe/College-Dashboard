@@ -157,8 +157,7 @@ def create_pie_chart():
     buffer.close()
     return img_base64
 
-UPLOAD_FOLDER = os.path.join(os.getcwd(), 'uploads')
-os.makedirs(UPLOAD_FOLDER, exist_ok=True) 
+UPLOAD_FOLDER = r'College-Dashboard\uploads' 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 @app.route('/')
