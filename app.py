@@ -18,7 +18,7 @@ ex_faculties = []
 
 sizes = [5.26] * 16 
 colors = ['blue', 'red', 'green', 'purple', 'orange', 'pink', 'brown', 'gray']
-df = pd.read_csv(r"uploads\1.csv")
+df = pd.read_csv(r"College-Dashboard\uploads\1.csv")
 
 for i in range(len(df)):
     teachers.append(df.iloc[i, 0])
