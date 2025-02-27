@@ -1,0 +1,18 @@
+Faculties,Branch,Subject-teacher,Gender,Income,Head O.D.,Ex-Faculties,Age,Job role
+Pankaj,CSE,DSA,Male,50000,HOD,,40,Lab
+Satish,CSE,TOC,Male,40000,,,39,Lab
+Ravi,CSE,CS,Male,50000,HOD,,26,Lab
+Meena,EX,DS,Female,50000,HOD,,35,Lab
+Kanchan,CSE,IWT,Female,35000,,,30,Minor Project
+Permila,CSE,ML,Female,35000,,,30,Lab
+Sonali,AIDS,DBMS,Female,50000,HOD,,29,Lab
+Saurabh,POLY,PM,Male,50000,HOD,,40,Scolership
+Ankur,CE,GEO.,Male,35000,,,35,Lab
+Brijesh,CE,CE,Male,50000,HOD,,35,Lab
+P.J. Shah,EX,Electronic,Male,40000,,,45,Principle
+Pushpa,POLY,EEE,Female,35000,,,26,Library
+Hmant,ME,ME,Male,50000,HOD,,36,Library
+Bhavesh,CSE,CN,Male,40000,,,30,Vice Principle
+Monika,CSE,CD,Female,35000,,,27,Major Project
+Shailesh,CSE,OOP's,Male,40000,,Ex-Faculties,40,Minor Project
+Pravin,CSE,DV,Male,40000,,Ex-Faculties,39,Major Project
